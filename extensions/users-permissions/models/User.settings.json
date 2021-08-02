@@ -1,0 +1,109 @@
+{
+  "kind": "collectionType",
+  "collectionName": "users-permissions_user",
+  "info": {
+    "name": "user",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "username": {
+      "type": "string",
+      "minLength": 3,
+      "unique": true,
+      "configurable": false,
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "minLength": 6,
+      "configurable": false,
+      "required": true
+    },
+    "provider": {
+      "type": "string",
+      "configurable": false
+    },
+    "password": {
+      "type": "password",
+      "minLength": 6,
+      "configurable": false,
+      "private": true
+    },
+    "resetPasswordToken": {
+      "type": "string",
+      "configurable": false,
+      "private": true
+    },
+    "confirmed": {
+      "type": "boolean",
+      "default": false,
+      "configurable": false
+    },
+    "blocked": {
+      "type": "boolean",
+      "default": false,
+      "configurable": false
+    },
+    "role": {
+      "model": "role",
+      "via": "users",
+      "plugin": "users-permissions",
+      "configurable": false
+    },
+    "Name": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+	"employeeid": {
+      "type": "string"
+    },
+    "userType": {
+      "type": "enumeration",
+      "enum": [
+        "admin",
+        "employee",
+        "manager",
+		"others",
+        "superviser",
+		"contractor"
+      ],
+      "required": true,
+      "default": "others"
+    },
+    "sex": {
+      "type": "enumeration",
+      "enum": [
+        "male",
+        "female",
+		"transgener",
+        "others"
+      ]
+    },
+    "dob": {
+      "type": "date"
+    },
+    "avatar_url": {
+      "type": "string"
+    },
+    "country_code": {
+      "type": "string"
+    },
+	"city": {
+      "type": "string"
+    },
+	"address": {
+      "type": "string"
+    },
+	"emergency_contact": {
+      "type": "string"
+    },
+	"joining_date": {
+      "type": "date"
+    }
+  }
+}
